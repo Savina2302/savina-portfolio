@@ -249,9 +249,7 @@ const App = () => {
                   <p className="text-brand-muted leading-relaxed mb-10 text-justify text-sm lg:text-base">
                     I am particularly interested in building a career in Business Analysis, Systems Analysis, Digital Transformation, and Technology-Driven Business Improvement. I aim to work at the intersection of Business and Technology, helping organizations identify inefficiencies, improve processes, adopt appropriate digital solutions, and make better technology-related decisions.
                   </p>
-                  <button className="w-full lg:w-auto bg-brand-dark text-white px-8 lg:px-12 py-4 lg:py-5 text-[10px] font-bold tracking-[0.3em] hover:bg-brand-accent transition-all">
-                    DOWNLOAD PROFESSIONAL CV (PDF)
-                  </button>
+                  
                 </div>
               </div>
 
@@ -259,7 +257,7 @@ const App = () => {
                 <h3 className="text-sm font-bold mb-6 text-brand-dark uppercase tracking-[0.3em] px-2 reveal">Academic Qualifications</h3>
                 {[
                   { title: "BSc (Hons) Business Information Systems (R)", inst: "University of Sri Jayewardenepura" },
-                  { title: "Diploma in International Business & Finance", inst: "University of the West of Scotland (ICBS)" },
+                  { title: "Diploma in International Business & Finance", inst: "University of the West of Scotland (via Imperial College of Business Studies)" },
                   { title: "Dual Diploma in Psychology + Counselling & Applied Psychology (R)", inst: "Universal College of Applied & General Studies" }
                 ].map((edu, index) => (
                   <div key={index} className="p-8 lg:p-10 bg-white border border-slate-200 border-l-[6px] border-l-brand-accent shadow-sm group hover:bg-brand-dark transition-all duration-500 reveal">
@@ -345,7 +343,7 @@ const App = () => {
                   <div className="p-6 lg:p-8 bg-slate-50 border border-slate-200 reveal">
                     <h4 className="text-lg font-bold text-brand-dark">Cyber Summit 2026</h4>
                     <p className="text-[10px] font-bold text-brand-accent uppercase tracking-widest mt-1 mb-4">Compere & Facilitator</p>
-                    <p className="text-sm text-brand-muted leading-relaxed mb-4">Served as the official Compere for high-level industry stakeholders.</p>
+                    <p className="text-sm text-brand-muted leading-relaxed mb-4">Served as the official Compere for high-level industry stakeholders, academia and students.</p>
                     <PhotoGallery count={2} images={["/images/cs26-1.jpeg", "/images/cs26-2.jpeg"]} label="Summit Photos" />
                   </div>
                   <div className="p-6 lg:p-8 bg-slate-50 border border-slate-200 reveal">
@@ -435,17 +433,39 @@ const App = () => {
         </section>
 
         {/* --- 7. PROJECTS --- */}
+        {/* --- 7. PROJECTS --- */}
         <section id="projects" className="py-16 lg:py-32 bg-[#F9F7F2] border-y border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="max-w-7xl mx-auto px-8">
             <SectionHeader title="Academic Projects" subtitle="Systems engineering, requirements analysis, and digital innovation." />
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-              <ProjectCard category="Decision Support" title="SolveMate" tagline="Chemical Compatibility Platform" role="Project Manager" description="Designed a specialized decision support system for polymer-solvent compatibility." tags={['Spring Boot', 'MySQL']} link="https://github.com/Department-of-IT-FMSC-USJ/oop-project-final-solvemate.git" />
-              <ProjectCard category="Social Impact" title="Project AURORA" tagline="CSR Empowerment" role="President" description="A high-impact CSR initiative supporting elderly populations and single mothers." tags={['Leadership', 'Management']} link="https://www.instagram.com/aurora.csr?igsi=MWE3d2VlZXRta3g4MQ==" />
-              <ProjectCard category="Healthcare" title="MedFlex" tagline="Digital Health Coordination" role="Full Stack Developer" description="A robust system designed to streamline healthcare provider-patient communication." tags={['UI/UX', 'Architecture']} link="https://github.com/LEOQuester/MedFlex-Latest" />
-              <ProjectCard category="Finance" title="Budget Buddy" tagline="Personal Finance Architecture" role="Requirements Engineer" description="A user-centric financial platform for automated tracking and goal-setting." tags={['User Research', 'Analysis']} link="https://github.com/Nayanthi-Weerasuriya/budget_buddy" />
+            <div className="grid md:grid-cols-2 gap-10">
+              <ProjectCard 
+                category="Decision Support Systems" title="SolveMate" tagline="Chemical Compatibility Platform" role="Project Manager" 
+                description="Designed a specialized decision support system for Identifying compatible polymer-solvent pairs using the Hansen Solubility model." 
+                tags={['Project Management', 'MySQL', 'Systems Analysis']} 
+                link="https://github.com/Department-of-IT-FMSC-USJ/oop-project-final-solvemate.git" // Replace with your link
+              />
+              <ProjectCard 
+                category="Social Impact" title="Project AURORA" tagline="CSR Empowerment" role="President" 
+                description="A high-impact CSR initiative supporting those adversely affected by the Covidd-19 pandemic; elderly, female adolescents, pregnant mothers and a single mother." 
+                tags={['Holistic Management', 'Leadership', 'Stakeholder Communication']} 
+                link="https://www.instagram.com/aurora.csr?igsi=MWE3d2VlZXRta3g4MQ==" // Replace with your link
+              />
+              <ProjectCard 
+                category="Healthcare" title="MedFlex" tagline="Digital Health Coordination" role="Full Stack Developer" 
+                description="A robust system designed to streamline communication between healthcare providers and patients with high data integrity." 
+                tags={['Web Development', 'UI/UX Design', 'Architecture']} 
+                link="https://github.com/LEOQuester/MedFlex-Latest" // Replace with your link
+              />
+              <ProjectCard 
+                category="Finance" title="Budget Buddy" tagline="Personal Finance Architecture" role="Requirements Engineer" 
+                description="Developed a user-centric financial platform focused on eliciting complex requirements for automated tracking and goal-setting." 
+                tags={['User Research', 'Analysis', 'Logic Design']} 
+                link="https://github.com/Nayanthi-Weerasuriya/budget_buddy" // Replace with your link
+              />
             </div>
           </div>
         </section>
+
 
         {/* --- 8. CONTACT --- */}
         <section id="contact" className="py-16 lg:py-32 bg-white">
