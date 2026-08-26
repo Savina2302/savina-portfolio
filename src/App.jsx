@@ -140,10 +140,16 @@ const App = () => {
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}} />
 
-      {/* BACKGROUND DECOR */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[10%] left-[-10%] w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-brand-accent/5 rounded-full blur-[80px] lg:blur-[120px] animate-float"></div>
-        <div className="absolute bottom-[5%] right-[-10%] w-[350px] lg:w-[700px] h-[350px] lg:h-[700px] bg-brand-primary/5 rounded-full blur-[100px] lg:blur-[150px] animate-float" style={{animationDelay: '5s'}}></div>
+      {/* BACKGROUND DECOR (Animated & Live) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Top Left Orb */}
+        <div className="absolute top-[10%] left-[-10%] w-[500px] lg:w-[800px] h-[500px] lg:h-[800px] bg-brand-accent/10 rounded-full blur-[100px] lg:blur-[150px] animate-drift"></div>
+        
+        {/* Bottom Right Orb */}
+        <div className="absolute bottom-[-5%] right-[-10%] w-[600px] lg:w-[900px] h-[600px] lg:h-[900px] bg-brand-primary/10 rounded-full blur-[120px] lg:blur-[180px] animate-drift-slow" style={{animationDelay: '-5s'}}></div>
+        
+        {/* Center Drifting Accent (Matches your IS theme) */}
+        <div className="absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] animate-drift" style={{animationDelay: '-10s'}}></div>
       </div>
 
       {/* NAVIGATION */}
@@ -218,7 +224,7 @@ const App = () => {
               <div className="order-1 lg:order-2 flex justify-center relative">
                 <div className="relative w-full max-w-[320px] lg:max-w-lg">
                   <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
-   <img src="/images/profile1.png" alt="Savina" className="w-full h-full object-cover object-top" />
+   <img src="/images/profile3.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
 </div>
                   <div className="absolute top-8 -right-4 lg:top-20 lg:-right-10 bg-brand-dark p-6 lg:p-10 shadow-2xl z-20 w-fit h-fit flex flex-col items-start transform hover:scale-105 transition-transform duration-500">
                     <p className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 lg:mb-2 whitespace-nowrap">Merit Standing</p>

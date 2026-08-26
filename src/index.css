@@ -59,3 +59,25 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Organic drifting animation */
+@keyframes organic-drift {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes organic-drift-slow {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(-40px, 60px) rotate(5deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.animate-drift {
+  animation: organic-drift 15s ease-in-out infinite;
+}
+
+.animate-drift-slow {
+  animation: organic-drift-slow 25s ease-in-out infinite;
+}
