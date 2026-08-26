@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // --- SHARED COMPONENTS ---
 
@@ -16,10 +16,12 @@ const SectionHeader = ({ title, subtitle, light }) => (
   </div>
 );
 
+// RESTORED: Original grid and aspect ratio
 const PhotoGallery = ({ count, label = "Project Photos", images = [] }) => {
   const items = images.length > 0 ? images : [...Array(count)];
   return (
-    <div className={`grid ${items.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'} lg:grid-cols-3 gap-4 mt-6`}>
+    /* This grid logic ensures 2 photos = 2 columns, 3 photos = 3 columns */
+    <div className={`grid ${items.length === 1 ? 'grid-cols-1' : items.length === 2 ? 'grid-cols-2' : 'grid-cols-3'} gap-2 mt-6`}>
       {items.map((item, i) => {
         const isObject = typeof item === 'object' && item !== null;
         const src = isObject ? item.url : item;
@@ -27,12 +29,12 @@ const PhotoGallery = ({ count, label = "Project Photos", images = [] }) => {
         const zoom = isObject && item.zoom ? item.zoom : "scale-100"; 
 
         return (
-          <div key={i} className="bg-slate-100 border border-dashed border-slate-300 flex items-center justify-center aspect-video relative overflow-hidden group rounded-sm shadow-sm">
+          <div key={i} className="bg-slate-100 border border-dashed border-slate-300 flex items-center justify-center aspect-video relative overflow-hidden group">
             {src && src !== "IMAGE_URL_HERE" ? (
               <img 
                 src={src} 
+                className={`w-full h-full object-cover ${position} ${zoom} transition-transform duration-500 group-hover:opacity-90`} 
                 alt={label}
-                className={`w-full h-full object-cover ${position} ${zoom} transition-transform duration-700 group-hover:scale-110`} 
               />
             ) : (
               <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">{label}</span>
@@ -44,16 +46,17 @@ const PhotoGallery = ({ count, label = "Project Photos", images = [] }) => {
   );
 };
 
+// RESTORED: Original padding and layout
 const ExperienceCard = ({ title, organization, period, highlights, photosCount, isCurrent, images = [] }) => (
-  <div className={`relative pl-8 lg:pl-12 pb-12 lg:pb-16 border-l-2 ${isCurrent ? 'border-brand-accent' : 'border-slate-200'} last:pb-0 reveal`}>
+  <div className={`relative pl-12 pb-16 border-l-2 ${isCurrent ? 'border-brand-accent' : 'border-slate-200'} last:pb-0 reveal`}>
     <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-white ${isCurrent ? 'border-brand-accent' : 'border-slate-300'}`}>
       {isCurrent && <div className="absolute inset-1 bg-brand-accent rounded-full animate-pulse"></div>}
     </div>
     <div className="flex flex-col lg:flex-row lg:gap-12">
       <div className="flex-1">
         <span className="text-[10px] font-bold text-brand-accent uppercase tracking-[0.3em] mb-2 block">{period}</span>
-        <h3 className="text-xl lg:text-2xl font-bold text-brand-dark mb-1">{title}</h3>
-        <p className="text-xs lg:text-sm font-bold text-brand-muted uppercase tracking-widest mb-6">{organization}</p>
+        <h3 className="text-2xl font-bold text-brand-dark mb-1">{title}</h3>
+        <p className="text-sm font-bold text-brand-muted uppercase tracking-widest mb-6">{organization}</p>
         <ul className="space-y-3 mb-8">
           {highlights.map((item, i) => (
             <li key={i} className="text-brand-primary text-sm flex items-start gap-3">
@@ -62,7 +65,7 @@ const ExperienceCard = ({ title, organization, period, highlights, photosCount, 
           ))}
         </ul>
       </div>
-      <div className="w-full lg:w-1/2">
+      <div className="lg:w-1/2">
         <PhotoGallery count={photosCount} images={images} label="Event / Role Photos" />
       </div>
     </div>
@@ -111,6 +114,7 @@ const ProjectCard = ({ title, tagline, description, role, tags, category, link }
 
 const App = () => {
   // Smooth Reveal Effect logic
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
@@ -126,8 +130,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative font-sans text-brand-dark overflow-x-hidden selection:bg-brand-accent/30">
-      
+    <div className="min-h-screen relative font-sans text-brand-dark selection:bg-brand-accent/30">
       {/* Background Smoothness Style Injection */}
       <style dangerouslySetInnerHTML={{ __html: `
         html { scroll-behavior: smooth; }
@@ -144,13 +147,16 @@ const App = () => {
       </div>
 
       {/* NAVIGATION */}
+      {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto h-20 lg:h-24 px-4 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto h-20 lg:h-24 px-6 lg:px-8 flex items-center justify-between">
           <div className="flex flex-col flex-shrink-0">
             <span className="text-xl lg:text-2xl font-bold tracking-tighter uppercase leading-none">Savina<span className="text-brand-accent">.</span>V</span>
             <span className="text-[8px] font-bold tracking-[0.4em] text-brand-muted uppercase mt-1">Think. Lead. Inspire.</span>
           </div>
-          <div className="flex items-center overflow-x-auto no-scrollbar ml-4 space-x-6 lg:space-x-8 text-[9px] lg:text-[10px] font-bold tracking-[0.1em] lg:tracking-[0.2em] uppercase whitespace-nowrap">
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase">
             <a href="#home" className="hover:text-brand-accent transition-colors">Home</a>
             <a href="#about" className="hover:text-brand-accent transition-colors">About</a>
             <a href="#experience" className="hover:text-brand-accent transition-colors">Experience</a>
@@ -159,7 +165,30 @@ const App = () => {
             <a href="#projects" className="hover:text-brand-accent transition-colors">Projects</a>
             <a href="#contact" className="hover:text-brand-accent transition-colors text-brand-accent">Contact</a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-brand-dark focus:outline-none"
+          >
+            <div className="w-6 h-0.5 bg-current mb-1.5 transition-all"></div>
+            <div className="w-6 h-0.5 bg-current mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-current"></div>
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden bg-white border-b border-slate-200 py-6 px-8 flex flex-col space-y-4 text-[10px] font-bold tracking-[0.2em] uppercase animate-in fade-in slide-in-from-top-4">
+            <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+            <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
+            <a href="#certifications" onClick={() => setIsMenuOpen(false)}>Certifications</a>
+            <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-brand-accent">Contact</a>
+          </div>
+        )}
       </nav>
 
       <main className="relative z-10">
@@ -188,9 +217,9 @@ const App = () => {
 
               <div className="order-1 lg:order-2 flex justify-center relative">
                 <div className="relative w-full max-w-[320px] lg:max-w-lg">
-                  <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
-                    <img src="/images/profile1.png" alt="Savina" className="w-full h-full object-cover object-top" />
-                  </div>
+                  <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
+   <img src="/images/profile1.png" alt="Savina" className="w-full h-full object-cover object-top" />
+</div>
                   <div className="absolute top-8 -right-4 lg:top-20 lg:-right-10 bg-brand-dark p-6 lg:p-10 shadow-2xl z-20 w-fit h-fit flex flex-col items-start transform hover:scale-105 transition-transform duration-500">
                     <p className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 lg:mb-2 whitespace-nowrap">Merit Standing</p>
                     <p className="text-3xl lg:text-5xl font-serif text-brand-accent flex items-baseline gap-2">
