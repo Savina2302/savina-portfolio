@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 // --- SHARED COMPONENTS ---
 
 const SectionHeader = ({ title, subtitle, light }) => (
-  <div className="mb-12 lg:mb-20 relative reveal px-2">
+  <div className="mb-12 lg:mb-20 relative reveal px-4 text-center lg:text-left">
     <h2 className={`text-2xl lg:text-4xl font-light tracking-tight uppercase ${light ? 'text-white' : 'text-brand-dark'}`}>
       {title}
     </h2>
-    <div className="h-1.5 w-16 bg-brand-accent mt-3"></div>
+    <div className="h-1.5 w-16 bg-brand-accent mt-3 mx-auto lg:mx-0"></div>
     {subtitle && (
-      <p className={`mt-6 text-base lg:text-lg font-medium leading-relaxed ${light ? 'text-slate-300' : 'text-brand-muted'} max-w-full lg:whitespace-nowrap overflow-hidden text-ellipsis`}>
+      <p className={`mt-6 text-base lg:text-lg font-medium leading-relaxed ${light ? 'text-slate-300' : 'text-brand-muted'} lg:whitespace-nowrap`}>
         {subtitle}
       </p>
     )}
@@ -149,7 +149,7 @@ const App = () => {
 
       {/* NAVIGATION */}
       {/* NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto h-20 lg:h-24 px-6 lg:px-8 flex items-center justify-between">
           <div className="flex flex-col flex-shrink-0">
             <span className="text-xl lg:text-2xl font-bold tracking-tighter uppercase leading-none">Savina<span className="text-brand-accent">.</span>V</span>
@@ -192,45 +192,38 @@ const App = () => {
         )}
       </nav>
 
-      <main className="relative z-10">
+      <main className="relative z-10 overflow-x-hidden">
         
         {/* --- 1. HOME --- */}
-        <section id="home" className="min-h-[85vh] lg:min-h-[90vh] flex items-center py-12 lg:py-24 bg-white relative">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full reveal">
+        <section id="home" className="min-h-[90vh] flex items-center py-12 lg:py-24 bg-white relative">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full reveal">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-brand-dark leading-[0.9] mb-10 tracking-tighter uppercase">
-  Savina <br /> 
-  <span className="text-brand-accent font-serif italic font-normal block tracking-tight capitalize text-4xl md:text-6xl lg:text-8xl lg:-mt-4 lg:ml-2">
-    Visvanathan
-  </span>
-</h1>
-<div className="h-1 w-125 bg-brand-dark mb-10"></div>
-                <p className="text-lg lg:text-2xl text-brand-primary leading-relaxed max-w-xl mb-10 lg:mb-12 font-medium italic opacity-90 mx-auto lg:mx-0">
+                <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-brand-dark leading-[1.1] lg:leading-[0.8] mb-6 lg:mb-10 tracking-tighter uppercase">
+                  Savina <br /> 
+                  <span className="text-brand-accent font-serif italic font-normal block tracking-tight capitalize text-4xl md:text-6xl lg:text-8xl lg:-mt-4 lg:ml-2">
+                    Visvanathan
+                  </span>
+                </h1>
+                <div className="h-1 w-24 bg-brand-dark mb-8 lg:mb-10 mx-auto lg:mx-0"></div>
+                <p className="text-lg lg:text-2xl text-brand-primary leading-relaxed max-w-xl mb-10 lg:mb-12 font-medium italic opacity-90 mx-auto lg:mx-0 text-center lg:text-left">
                   "Where Business, Technology and People come together, I turn ideas into solutions that matter."
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
-                  <a 
-  href="/CV.pdf" 
-  download="Savina_Visvanathan_CV.pdf"
-  className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg flex items-center gap-2"
->
-  DOWNLOAD CV
-  {/* Download Icon */}
-  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-  </svg>
-</a>
-<a href="#contact" className="px-8 lg:px-10 py-4 lg:py-5 border-2 border-brand-dark text-brand-dark text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-all">LET'S CONNECT</a>
+                  <a href="/CV.pdf" download="Savina_Visvanathan_CV.pdf" className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg flex items-center gap-2">
+                    DOWNLOAD CV
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  </a>
+                  <a href="#contact" className="px-8 lg:px-10 py-4 lg:py-5 border-2 border-brand-dark text-brand-dark text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-all text-center">LET'S CONNECT</a>
                 </div>
               </div>
 
               <div className="order-1 lg:order-2 flex justify-center relative">
-                <div className="relative w-full max-w-[320px] lg:max-w-lg">
+                <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-lg">
                   <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
-   <img src="/images/profile.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
-</div>
+                    <img src="images/profile.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
+                  </div>
                   
                 </div>
               </div>
@@ -242,7 +235,7 @@ const App = () => {
         {/* --- 2. ABOUT ME --- */}
         <section id="about" className="py-16 lg:py-32 bg-slate-50/60 backdrop-blur-md border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="About Me" subtitle="Three Disciplines. One Curiosity: understanding how People, Business, and Technology come together." />
+            <SectionHeader title="About Me" subtitle="Three disciplines. One curiosity: understanding how things work, why people behave the way they do, and how ideas can create meaningful change." />
             
             {/* Changed from lg:grid-cols-2 to lg:grid-cols-3 to give the Bio more horizontal room */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
@@ -259,7 +252,7 @@ const App = () => {
                       I’m a Business Information Systems undergraduate at the University of Sri Jayewardenepura, with a 3.97/4.00 GPA and an academic journey spanning Business, Technology, Finance, and Psychology.
                     </p>
                     <p>
-                      I’ve always been curious about how things work, and even more curious about how they could work better. I enjoy looking beyond the obvious problem, understanding what people actually need, and turning those insights into practical solutions. Whether I’m working on a project, coordinating a team, or analysing a system, I’m drawn to the space where people, business, and technology come together.
+                      I’ve always been curious about how things work, and even more curious about how they could work better. I enjoy looking beyond the obvious problem, understanding what people actually need, and turning those insights into practical solutions. Whether I’m working on a project, coordinating a team, or analysing a system, I’m drawn to the space where business, technology and people come together.
                     </p>
                   </div>
 
@@ -512,29 +505,41 @@ const App = () => {
         </section>
 
         {/* --- 8. CONTACT --- */}
-        <section id="contact" className="py-16 lg:py-32 bg-white/60 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* --- 8. CONTACT --- */}
+        <section id="contact" className="py-16 lg:py-32 bg-white/60 backdrop-blur-md relative">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="mb-12 lg:mb-20 flex flex-col items-center text-center reveal">
-              <h2 className="text-2xl lg:text-3xl font-light tracking-tight uppercase text-brand-dark">Contact Me</h2>
+              <h2 className="text-2xl lg:text-3xl font-light tracking-tight uppercase text-brand-dark">
+                Contact Me
+              </h2>
               <div className="h-1.5 w-16 bg-brand-accent mt-3 mx-auto"></div>
-              <p className="mt-6 text-sm lg:text-lg font-medium text-brand-muted mx-auto text-justify lg:whitespace-nowrap">
-                Open to Internship Opportunities, Academic Collaborations, and Professional Networking.
-              </p>
-              <p className="mt-6 text-sm lg:text-lg font-small text-brand-muted mx-auto text-justify lg:whitespace-nowrap">
-                I’m always open to meaningful conversations, new perspectives, and opportunities to learn, contribute, and grow.
-              </p>
+              
+              {/* Wrapped in a container to ensure mobile safety while maintaining one-line desktop view */}
+              <div className="mt-8 space-y-2 w-full overflow-hidden">
+                <p className="text-sm lg:text-lg font-medium text-brand-muted lg:whitespace-nowrap text-center">
+                  Open to Internship Opportunities, Academic Collaborations, and Professional Networking.
+                </p>
+                <p className="text-xs lg:text-base text-brand-muted lg:whitespace-nowrap text-center italic opacity-80">
+                  Eager to learn from new perspectives, contribute to meaningful work, and build connections that go beyond the classroom.
+                </p>
+              </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8 max-w-5xl mx-auto">
               {[
                 { label: 'Direct Communication', val: 'savina.visvanathan@gmail.com', href: 'mailto:savina.visvanathan@gmail.com' },
                 { label: 'Direct Call / WhatsApp', val: '+94 71 998 0118', href: 'tel:+94719980118' },
                 { label: 'Professional Presence', val: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/savina-visvanathan-9bab01304' },
                 { label: 'Technical Portfolio', val: 'GitHub Profile', href: 'https://github.com/Savina2302' }
               ].map((item, i) => (
-                <div key={i} className="p-8 lg:p-10 bg-slate-50 border border-slate-200 hover:border-brand-accent transition-colors group reveal">
+                <div key={i} className="p-8 lg:p-10 bg-white/90 border border-slate-200 hover:border-brand-accent transition-all duration-300 group reveal shadow-sm flex flex-col justify-center">
                   <p className="text-[10px] font-bold text-brand-accent uppercase tracking-[0.3em] mb-4">{item.label}</p>
-                  <a href={item.href} target={item.href.startsWith('http') ? '_blank' : ''} className="text-base lg:text-xl font-bold text-brand-dark group-hover:text-brand-accent transition-colors break-all underline underline-offset-4">
+                  <a 
+                    href={item.href} 
+                    target={item.href.startsWith('http') ? '_blank' : ''} 
+                    rel="noopener noreferrer"
+                    className="text-base lg:text-xl font-bold text-brand-dark group-hover:text-brand-accent transition-colors break-all underline underline-offset-4"
+                  >
                     {item.val}
                   </a>
                 </div>
