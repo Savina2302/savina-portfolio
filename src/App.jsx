@@ -160,6 +160,7 @@ const App = () => {
           <div className="hidden lg:flex items-center space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase">
             <a href="#home" className="hover:text-brand-accent transition-colors">Home</a>
             <a href="#about" className="hover:text-brand-accent transition-colors">About</a>
+            <a href="#achievements" className="hover:text-brand-accent transition-colors">Achievements</a>
             <a href="#experience" className="hover:text-brand-accent transition-colors">Experience</a>
             <a href="#skills" className="hover:text-brand-accent transition-colors">Skills</a>
             <a href="#certifications" className="hover:text-brand-accent transition-colors">Certifications</a>
@@ -183,6 +184,7 @@ const App = () => {
           <div className="lg:hidden bg-white border-b border-slate-200 py-6 px-8 flex flex-col space-y-4 text-[10px] font-bold tracking-[0.2em] uppercase animate-in fade-in slide-in-from-top-4">
             <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#achievements" onClick={() => setIsMenuOpen(false)}>Achievements</a>
             <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
             <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
             <a href="#certifications" onClick={() => setIsMenuOpen(false)}>Certifications</a>
@@ -293,9 +295,10 @@ const App = () => {
         </section>
 
         {/* --- 3. ACHIEVEMENTS --- */}
+        <section id="achievements" className="py-16 lg:py-24 bg-white/60 backdrop-blur-md relative"></section>
         <section className="py-16 lg:py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="Academic & Leadership Achievements" subtitle="Milestones that shaped my Confidence, Curiosity, and Drive to keep growing." />
+            <SectionHeader title="Achievements" subtitle="Milestones that shaped my Confidence, Curiosity, and Drive to keep growing." />
             
             {/* Main High-Impact Cards */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
