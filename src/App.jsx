@@ -140,16 +140,11 @@ const App = () => {
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}} />
 
-      {/* BACKGROUND DECOR (Animated & Live) */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Top Left Orb */}
-        <div className="absolute top-[10%] left-[-10%] w-[500px] lg:w-[800px] h-[500px] lg:h-[800px] bg-brand-accent/10 rounded-full blur-[100px] lg:blur-[150px] animate-drift"></div>
-        
-        {/* Bottom Right Orb */}
-        <div className="absolute bottom-[-5%] right-[-10%] w-[600px] lg:w-[900px] h-[600px] lg:h-[900px] bg-brand-primary/10 rounded-full blur-[120px] lg:blur-[180px] animate-drift-slow" style={{animationDelay: '-5s'}}></div>
-        
-        {/* Center Drifting Accent (Matches your IS theme) */}
-        <div className="absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] animate-drift" style={{animationDelay: '-10s'}}></div>
+      {/* BACKGROUND DECOR (Animated) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-white">
+        <div className="absolute top-[5%] left-[-10%] w-[600px] lg:w-[1000px] h-[600px] lg:h-[1000px] bg-brand-accent/20 rounded-full blur-[100px] lg:blur-[160px] animate-drift"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] lg:w-[1200px] h-[600px] lg:h-[1200px] bg-brand-primary/20 rounded-full blur-[120px] lg:blur-[200px] animate-drift-slow"></div>
+        <div className="absolute top-[40%] right-[15%] w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] animate-drift" style={{ animationDelay: '-10s' }}></div>
       </div>
 
       {/* NAVIGATION */}
@@ -205,33 +200,38 @@ const App = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-brand-dark leading-[0.8] mb-8 lg:mb-10 tracking-tighter uppercase">
-                  Savina <br /> 
-                  <span className="text-brand-accent font-serif italic font-normal block tracking-tight capitalize text-4xl md:text-6xl lg:text-8xl lg:-mt-4 lg:ml-2">
-                    Visvanathan
-                  </span>
-                </h1>
-                <div className="h-1 w-24 bg-brand-dark mb-8 lg:mb-10 mx-auto lg:mx-0"></div>
+                <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-brand-dark leading-[0.9] mb-10 tracking-tighter uppercase">
+  Savina <br /> 
+  <span className="text-brand-accent font-serif italic font-normal block tracking-tight capitalize text-4xl md:text-6xl lg:text-8xl lg:-mt-4 lg:ml-2">
+    Visvanathan
+  </span>
+</h1>
+<div className="h-1 w-125 bg-brand-dark mb-10"></div>
                 <p className="text-lg lg:text-2xl text-brand-primary leading-relaxed max-w-xl mb-10 lg:mb-12 font-medium italic opacity-90 mx-auto lg:mx-0">
-                  "Bridging business, technology and human behaviour to design practical digital solutions."
+                  "Where Business, Technology and People come together, I turn ideas into solutions that matter."
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
-                  <a href="#experience" className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg">VIEW EXPERIENCE</a>
-                  <a href="#contact" className="px-8 lg:px-10 py-4 lg:py-5 border-2 border-brand-dark text-brand-dark text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-all">LET'S CONNECT</a>
+                  <a 
+  href="/CV.pdf" 
+  download="Savina_Visvanathan_CV.pdf"
+  className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg flex items-center gap-2"
+>
+  DOWNLOAD CV
+  {/* Download Icon */}
+  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+  </svg>
+</a>
+<a href="#contact" className="px-8 lg:px-10 py-4 lg:py-5 border-2 border-brand-dark text-brand-dark text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-all">LET'S CONNECT</a>
                 </div>
               </div>
 
               <div className="order-1 lg:order-2 flex justify-center relative">
                 <div className="relative w-full max-w-[320px] lg:max-w-lg">
                   <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
-   <img src="/images/profile3.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
+   <img src="/images/profile.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
 </div>
-                  <div className="absolute top-8 -right-4 lg:top-20 lg:-right-10 bg-brand-dark p-6 lg:p-10 shadow-2xl z-20 w-fit h-fit flex flex-col items-start transform hover:scale-105 transition-transform duration-500">
-                    <p className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 lg:mb-2 whitespace-nowrap">Merit Standing</p>
-                    <p className="text-3xl lg:text-5xl font-serif text-brand-accent flex items-baseline gap-2">
-                      3.97 <span className="text-[10px] lg:text-sm font-sans text-white font-bold uppercase ml-1">GPA</span>
-                    </p>
-                  </div>
+                  
                 </div>
               </div>
 
@@ -240,38 +240,61 @@ const App = () => {
         </section>
 
         {/* --- 2. ABOUT ME --- */}
-        <section id="about" className="py-16 lg:py-32 bg-slate-50 border-y border-slate-200">
+        <section id="about" className="py-16 lg:py-32 bg-slate-50/60 backdrop-blur-md border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="About Me" subtitle="A multi-disciplinary trajectory across Information Systems, International Finance, and Psychology." />
+            <SectionHeader title="About Me" subtitle="Three Disciplines. One Curiosity: understanding how People, Business, and Technology come together." />
             
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div className="space-y-8">
-                <div className="bg-white p-8 lg:p-12 border border-slate-200 shadow-sm reveal">
-                  <h3 className="text-[10px] lg:text-xs font-bold mb-8 text-brand-dark uppercase tracking-[0.3em] border-b border-brand-accent pb-4 inline-block">Biography & Career Direction</h3>
-                  <p className="text-brand-primary leading-relaxed text-base lg:text-lg mb-6 opacity-90 text-justify">
-                    I am a high-achieving Business Information Systems undergraduate at the University of Sri Jayewardenepura, with a 3.97/4.00 GPA and an interdisciplinary academic background spanning Business, Technology, Finance and Psychology.  
-                    My strengths lie in understanding business problems, analysing stakeholder requirements, translating those requirements into functional system designs, and connecting business objectives with practical technology solutions.
-                  </p>
-                  <p className="text-brand-muted leading-relaxed mb-10 text-justify text-sm lg:text-base">
-                    I am particularly interested in building a career in Business Analysis, Systems Analysis, Digital Transformation, and Technology-Driven Business Improvement. I aim to work at the intersection of Business and Technology, helping organizations identify inefficiencies, improve processes, adopt appropriate digital solutions, and make better technology-related decisions.
-                  </p>
+            {/* Changed from lg:grid-cols-2 to lg:grid-cols-3 to give the Bio more horizontal room */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
+              
+              {/* Column 1: Biography & Career Direction (Takes up 2 parts of the grid) */}
+              <div className="lg:col-span-2 space-y-8">
+                <div className="bg-white p-8 lg:p-14 border border-slate-200 shadow-sm reveal">
+                  <h3 className="text-[10px] lg:text-xs font-bold mb-10 text-brand-dark uppercase tracking-[0.3em] border-b border-brand-accent pb-4 inline-block">
+                    Biography & Career Direction
+                  </h3>
                   
+                  <div className="space-y-6 text-brand-primary leading-relaxed text-base lg:text-lg opacity-90 text-justify">
+                    <p>
+                      I’m a Business Information Systems undergraduate at the University of Sri Jayewardenepura, with a 3.97/4.00 GPA and an academic journey spanning Business, Technology, Finance, and Psychology.
+                    </p>
+                    <p>
+                      I’ve always been curious about how things work, and even more curious about how they could work better. I enjoy looking beyond the obvious problem, understanding what people actually need, and turning those insights into practical solutions. Whether I’m working on a project, coordinating a team, or analysing a system, I’m drawn to the space where people, business, and technology come together.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-slate-100 space-y-6 text-brand-muted leading-relaxed text-sm lg:text-base text-justify">
+                    <p>
+                      My career interests lie in Business Analysis, Project Management, Digital Transformation, and technology-driven business improvement. I want to help organisations use technology and increasingly, AI, not simply because it is available, but because it creates meaningful value. For me, AI should amplify human judgement, creativity, productivity, and problem-solving, not replace the thinking behind them.
+                    </p>
+                    <p>
+                      I want to build a career around that balance: understanding the human problem, thinking critically about the business need, and using technology intelligently to create a better solution. Ultimately, I hope to become someone organisations can rely on to connect what the business needs with what technology makes possible.
+                    </p>
+                  </div>
                 </div>
               </div>
 
+              {/* Column 2: Academic Qualifications (Takes up 1 part of the grid) */}
               <div className="space-y-6">
-                <h3 className="text-sm font-bold mb-6 text-brand-dark uppercase tracking-[0.3em] px-2 reveal">Academic Qualifications</h3>
+                <h3 className="text-sm font-bold mb-6 text-brand-dark uppercase tracking-[0.3em] px-2 reveal">
+                  Academic Qualifications
+                </h3>
                 {[
                   { title: "BSc (Hons) Business Information Systems (R)", inst: "University of Sri Jayewardenepura" },
-                  { title: "Diploma in International Business & Finance", inst: "University of the West of Scotland (via Imperial College of Business Studies)" },
-                  { title: "Dual Diploma in Psychology + Counselling & Applied Psychology (R)", inst: "Universal College of Applied & General Studies" }
+                  { title: "Diploma in International Business & Finance", inst: "University of the West of Scotland" },
+                  { title: "Dual Diploma in Psychology + Counselling (R)", inst: "Universal Collge of Applied & General Studies" }
                 ].map((edu, index) => (
-                  <div key={index} className="p-8 lg:p-10 bg-white border border-slate-200 border-l-[6px] border-l-brand-accent shadow-sm group hover:bg-brand-dark transition-all duration-500 reveal">
-                    <h4 className="font-bold text-brand-dark text-lg lg:text-xl mb-2 group-hover:text-white transition-colors">{edu.title}</h4>
-                    <p className="text-[10px] text-brand-accent uppercase tracking-[0.2em] font-bold">{edu.inst}</p>
+                  <div key={index} className="p-6 lg:p-8 bg-white border border-slate-200 border-l-[4px] border-l-brand-accent shadow-sm group hover:bg-brand-dark transition-all duration-500 reveal">
+                    <h4 className="font-bold text-brand-dark text-md lg:text-lg mb-2 group-hover:text-white transition-colors leading-tight">
+                      {edu.title}
+                    </h4>
+                    <p className="text-[9px] text-brand-accent uppercase tracking-[0.1em] font-bold group-hover:text-brand-accent transition-colors">
+                      {edu.inst}
+                    </p>
                   </div>
                 ))}
               </div>
+
             </div>
           </div>
         </section>
@@ -279,7 +302,9 @@ const App = () => {
         {/* --- 3. ACHIEVEMENTS --- */}
         <section className="py-16 lg:py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="Academic & Leadership Achievements" subtitle="Recognitions of excellence from Lyceum International School - Nuwara Eliya." />
+            <SectionHeader title="Academic & Leadership Achievements" subtitle="Milestones that shaped my Confidence, Curiosity, and Drive to keep growing." />
+            
+            {/* Main High-Impact Cards */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               <div className="p-8 lg:p-10 border border-slate-200 bg-[#F9F7F2] relative group reveal">
                 <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent"></div>
@@ -288,51 +313,66 @@ const App = () => {
                 <p className="text-[10px] text-brand-muted mt-2 font-bold uppercase">Nuwara Eliya District — Commerce Stream</p>
                 <p className="text-[10px] text-brand-accent mt-1 uppercase font-bold tracking-tighter">Lyceum International School</p>
               </div>
+
               <div className="p-8 lg:p-10 border border-slate-200 bg-slate-50 reveal">
                 <p className="text-[9px] font-bold text-brand-muted uppercase tracking-[0.2em] mb-4">Lyceum International School - Nuwara Eliya</p>
                 <h4 className="text-xl lg:text-2xl font-bold text-brand-dark leading-tight">Best A/L Commerce Student</h4>
               </div>
+
               <div className="p-8 lg:p-10 border border-slate-200 bg-slate-50 reveal">
                 <p className="text-[9px] font-bold text-brand-muted uppercase tracking-[0.2em] mb-4">Lyceum International School - Nuwara Eliya</p>
-                <h4 className="text-xl lg:text-2xl font-bold text-brand-dark leading-tight">Best English Orator</h4>
+                <h4 className="text-2xl font-bold text-brand-dark leading-tight text-brand-dark">Best English Orator</h4>
               </div>
             </div>
+
+            {/* NEW: Additional Awards Summary Bar */}
+            <div className="mt-12 p-6 border-t border-dashed border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 reveal">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-px bg-brand-accent"></div>
+                <p className="text-[10px] font-bold text-brand-dark uppercase tracking-[0.2em]">Additional Recognitions</p>
+              </div>
+              <p className="text-xs text-brand-muted italic max-w-2xl text-center md:text-right leading-relaxed">
+                Recipient of multiple academic and extracurricular awards throughout my school career, 
+                including subject prizes and leadership commendations that complement the primary milestones listed above.
+              </p>
+            </div>
+
           </div>
         </section>
 
         {/* --- 4. EXPERIENCE --- */}
-        <section id="experience" className="py-16 lg:py-32 bg-white">
+        <section id="experience" className="py-16 lg:py-32 bg-white/60 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="Experience" subtitle="A record of leadership, organizational excellence, and strategic stakeholder engagement." />
+            <SectionHeader title="Experience" subtitle="From coordinating people and projects to taking the lead, each experience has shaped how I work, communicate, and create impact." />
             <div className="max-w-5xl mx-auto mb-20 lg:mb-32">
               <ExperienceCard 
                 isCurrent period="2026/2027" title="Secretary" organization="ISACA Student Group USJ"
-                highlights={["Directing administrative and operational leadership of the student group", "Acting as a primary liaison between the executive board and student body", "Coordinating relevant organizational activities and events"]}
+                highlights={["Directing administrative and operational leadership of the student group.", "Acting as a primary liaison between the executive board and student body.", "Coordinating relevant organizational activities and events."]}
                 images={[{ url: "/images/Secratary1.jpeg", pos: "object-center" }, { url: "/images/Secretary2.jpeg", pos: "object-center" }]}
               />
               <ExperienceCard 
                 period="2025/2026" title="Assistant Secretary" organization="ISACA Student Group USJ"
-                highlights={["Providing critical executive committee support and coordination", "Managing organizational communication and project documentation"]}
+                highlights={["Providing critical executive committee support and coordination.", "Managing organizational communication and project documentation."]}
                 images={["/images/assistant2.jpeg"]}
               />
               <ExperienceCard 
                 period="2024/2025" title="Partnerships Manager" organization="Cyber Summit 2024/25 — ISACA Student Group USJ"
-                highlights={["Partnership coordination and stakeholder communication", "Supporting external collaborations and event coordination"]}
+                highlights={["Partnership coordination and stakeholder communication.", "Supporting external collaborations and event coordination."]}
                 images={[{ url: "/images/cs25-1.jpeg", pos: "object-center" }, { url: "/images/cs25-2.jpeg", pos: "object-center" }]}
               />
               <ExperienceCard 
                 period="2024/2025" title="Finance Squad Leader" organization="ISACA Student Group USJ"
-                highlights={["Financial coordination and team leadership", "Managing budget-related responsibilities"]}
+                highlights={["Financial coordination and team leadership.", "Managing budget-related responsibilities."]}
                 images={[{ url: "/images/finance1.jpeg", pos: "object-top" }, { url: "/images/finance2.jpeg", pos: "object-center", zoom: "scale-[1.2]" }]}
               />
               <ExperienceCard 
                 period="Event Representation" title="Representative" organization="ISACA Student Group USJ"
-                highlights={["Represented ISG-USJ at the Horizon Campus inauguration", "Organizational representation and networking"]}
+                highlights={["Represented ISG-USJ at the Horizon Campus inauguration.", "Organizational representation and networking."]}
                 images={[{ url: "/images/horizon3.jpeg", pos: "object-top" }, { url: "/images/horizon2.jpeg", pos: "object-center" }]}
               />
               <ExperienceCard 
                 period="Academic Project" title="President" organization="CSR Project AURORA"
-                highlights={["Leading project planning and team coordination", "Directing community engagement and medical support distribution"]}
+                highlights={["Leading project planning, team coordination and execution.", "Directing community engagement and medical support distribution."]}
                 images={[{ url: "/images/aurora1.jpeg", pos: "object-center" }, { url: "/images/aurora2.jpeg", pos: "object-bottom" }, { url: "/images/aurora3.jpeg", pos: "object-center" }, { url: "/images/aurora4.jpeg", pos: "object-bottom" }, { url: "/images/aurora5.jpeg", pos: "object-center" }]}
               />
             </div>
@@ -369,7 +409,7 @@ const App = () => {
           </div>
         </section>
 
-        {/* --- 5. SKILLS --- */}
+        
         {/* --- 5. SKILLS --- */}
         <section id="skills" className="py-16 lg:py-32 bg-brand-dark text-white relative overflow-hidden">
           {/* Background Grid Accent */}
@@ -380,7 +420,7 @@ const App = () => {
           </div>
 
           <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
-            <SectionHeader title="Skill Set" subtitle="Comprehensive skill set at the intersection of Business, Technology & Human Behaviour." light />
+            <SectionHeader title="Skill Set" subtitle="Bringing together Business Thinking, Technology, and People Skills to turn ideas into practical solutions." light />
             
             <div className="grid md:grid-cols-3 gap-10 lg:gap-20">
               {/* Technical & Analytical */}
@@ -423,9 +463,9 @@ const App = () => {
         </section>
 
         {/* --- 6. CERTIFICATIONS --- */}
-        <section id="certifications" className="py-16 lg:py-32 bg-slate-50 border-y border-slate-200">
+        <section id="certifications" className="py-16 lg:py-32 bg-slate-50/60 backdrop-blur-md border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeader title="Certifications" subtitle="Specialized training in Cybersecurity, Data, and Project Management." />
+            <SectionHeader title="Certifications" subtitle="Expanding my knowledge beyond the classroom through continuous learning in Technology, Cybersecurity, Data, and Project Management." />
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               <CertificationCard category="Project Management" title="Foundations of Project Management" issuer="University of Moratuwa" />
               <CertificationCard category="Cybersecurity" title="Deloitte Australia — Cyber Job Simulation" issuer="Forage" />
@@ -439,48 +479,49 @@ const App = () => {
         </section>
 
         {/* --- 7. PROJECTS --- */}
-        {/* --- 7. PROJECTS --- */}
-        <section id="projects" className="py-16 lg:py-32 bg-[#F9F7F2] border-y border-slate-200">
+        <section id="projects" className="py-16 lg:py-32 bg-[#F9F7F2]/60 backdrop-blur-md border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-8">
-            <SectionHeader title="Academic Projects" subtitle="Systems engineering, requirements analysis, and digital innovation." />
+            <SectionHeader title="Academic Projects" subtitle="Turning real-world problems into practical solutions through Technology, Analysis, and Collaboration." />
             <div className="grid md:grid-cols-2 gap-10">
               <ProjectCard 
                 category="Decision Support Systems" title="SolveMate" tagline="Chemical Compatibility Platform" role="Project Manager" 
                 description="Designed a specialized decision support system for Identifying compatible polymer-solvent pairs using the Hansen Solubility model." 
                 tags={['Project Management', 'MySQL', 'Systems Analysis']} 
-                link="https://github.com/Department-of-IT-FMSC-USJ/oop-project-final-solvemate.git" // Replace with your link
+                link="https://github.com/Department-of-IT-FMSC-USJ/oop-project-final-solvemate.git" 
               />
               <ProjectCard 
                 category="Social Impact" title="Project AURORA" tagline="CSR Empowerment" role="President" 
                 description="A high-impact CSR initiative supporting those adversely affected by the Covidd-19 pandemic; elderly, female adolescents, pregnant mothers and a single mother." 
                 tags={['Holistic Management', 'Leadership', 'Stakeholder Communication']} 
-                link="https://www.instagram.com/aurora.csr?igsi=MWE3d2VlZXRta3g4MQ==" // Replace with your link
+                link="https://www.instagram.com/aurora.csr?igsi=MWE3d2VlZXRta3g4MQ==" 
               />
               <ProjectCard 
                 category="Healthcare" title="MedFlex" tagline="Digital Health Coordination" role="Full Stack Developer" 
                 description="A robust system designed to streamline communication between healthcare providers and patients with high data integrity." 
                 tags={['Web Development', 'UI/UX Design', 'Architecture']} 
-                link="https://github.com/LEOQuester/MedFlex-Latest" // Replace with your link
+                link="https://github.com/LEOQuester/MedFlex-Latest" 
               />
               <ProjectCard 
                 category="Finance" title="Budget Buddy" tagline="Personal Finance Architecture" role="Requirements Engineer" 
                 description="Developed a user-centric financial platform focused on eliciting complex requirements for automated tracking and goal-setting." 
                 tags={['User Research', 'Analysis', 'Logic Design']} 
-                link="https://github.com/Nayanthi-Weerasuriya/budget_buddy" // Replace with your link
+                link="https://github.com/Nayanthi-Weerasuriya/budget_buddy" 
               />
             </div>
           </div>
         </section>
 
-
         {/* --- 8. CONTACT --- */}
-        <section id="contact" className="py-16 lg:py-32 bg-white">
+        <section id="contact" className="py-16 lg:py-32 bg-white/60 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="mb-12 lg:mb-20 flex flex-col items-center text-center reveal">
               <h2 className="text-2xl lg:text-3xl font-light tracking-tight uppercase text-brand-dark">Contact Me</h2>
               <div className="h-1.5 w-16 bg-brand-accent mt-3 mx-auto"></div>
               <p className="mt-6 text-sm lg:text-lg font-medium text-brand-muted mx-auto text-justify lg:whitespace-nowrap">
                 Open to Internship Opportunities, Academic Collaborations, and Professional Networking.
+              </p>
+              <p className="mt-6 text-sm lg:text-lg font-small text-brand-muted mx-auto text-justify lg:whitespace-nowrap">
+                I’m always open to meaningful conversations, new perspectives, and opportunities to learn, contribute, and grow.
               </p>
             </div>
 
@@ -520,3 +561,4 @@ const App = () => {
 };
 
 export default App;
+
