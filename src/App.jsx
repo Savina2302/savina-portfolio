@@ -145,6 +145,8 @@ const App = () => {
         <div className="absolute top-[5%] left-[-10%] w-[600px] lg:w-[1000px] h-[600px] lg:h-[1000px] bg-brand-accent/20 rounded-full blur-[100px] lg:blur-[160px] animate-drift"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[600px] lg:w-[1200px] h-[600px] lg:h-[1200px] bg-brand-primary/20 rounded-full blur-[120px] lg:blur-[200px] animate-drift-slow"></div>
         <div className="absolute top-[40%] right-[15%] w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] animate-drift" style={{ animationDelay: '-10s' }}></div>
+        <div className="particle-field"></div>
+        <div className="light-sweep"></div>
       </div>
 
       {/* NAVIGATION */}
@@ -223,6 +225,8 @@ const App = () => {
 
               <div className="order-1 lg:order-2 flex justify-center relative">
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-lg">
+                  <div className="aura-ring"></div>
+                  
                   <div className="aspect-[3/4] bg-slate-100 border-4 lg:border-8 border-white shadow-2xl grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-1000 overflow-hidden z-10 relative">
                     <img src="images/profile.jpeg" alt="Savina" className="w-full h-full object-cover object-top" />
                   </div>
@@ -235,7 +239,7 @@ const App = () => {
         </section>
 
         {/* --- 2. ABOUT ME --- */}
-        <section id="about" className="py-16 lg:py-32 bg-slate-50/60 backdrop-blur-md border-y border-slate-200">
+         <section id="about" className="pt-16 pb-0 lg:pt-32 lg:pb-0 bg-slate-50/60 backdrop-blur-md border-t border-slate-200 relative">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <SectionHeader title="About Me" subtitle="Three disciplines. One curiosity: understanding how things work, why people behave the way they do, and how ideas can create meaningful change." />
             
@@ -295,8 +299,8 @@ const App = () => {
         </section>
 
         {/* --- 3. ACHIEVEMENTS --- */}
-        <section id="achievements" className="py-16 lg:py-24 bg-white/60 backdrop-blur-md relative"></section>
-        <section className="py-16 lg:py-24 bg-white relative">
+      
+        <section id="achievements" className="pt-16 pb-16 lg:pt-24 lg:pb-24 bg-white/60 backdrop-blur-md relative relative">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <SectionHeader title="Achievements" subtitle="Milestones that shaped my Confidence, Curiosity, and Drive to keep growing." />
             
@@ -335,6 +339,8 @@ const App = () => {
 
           </div>
         </section>
+
+
 
         {/* --- 4. EXPERIENCE --- */}
         <section id="experience" className="py-16 lg:py-32 bg-white/60 backdrop-blur-md">
