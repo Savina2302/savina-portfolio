@@ -149,7 +149,7 @@ const App = () => {
         <div className="light-sweep"></div>
       </div>
 
-      {/* NAVIGATION */}
+  
       {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto h-20 lg:h-24 px-6 lg:px-8 flex items-center justify-between">
@@ -215,7 +215,7 @@ const App = () => {
                   "Where Business, Technology and People come together, I turn ideas into solutions that matter."
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
-                  <a href="/CV.pdf" download="Savina_Visvanathan_CV.pdf" className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg flex items-center gap-2">
+                  <a href="/V. Savina CV.pdf" download="Savina_Visvanathan_CV.pdf" className="px-8 lg:px-10 py-4 lg:py-5 bg-brand-dark text-white text-[9px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] hover:bg-brand-accent transition-all shadow-lg flex items-center gap-2">
                     DOWNLOAD CV
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                   </a>
